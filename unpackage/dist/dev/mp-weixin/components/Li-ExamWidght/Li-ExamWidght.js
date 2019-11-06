@@ -291,21 +291,23 @@ var _default2 =
           if (r.confirm) {
             //计算答题分数
             var score = 0;
-            var errorListid = [];
+            var errorQestionList = [];
             for (var i = 0; i < that.dataList.length; i++) {
               if (that.dataList[i].fldAnswer == that.dataList[i].fldTrueAnswer) {
                 score = score + 1;
               } else {
-                errorListid.push({
-                  "errorId": that.dataList[i].questionID });
-
+                errorQestionList.push(that.dataList[i]);
               }
             }
-            console.log(errorListid);
+            console.log(errorQestionList);
             console.log('考试得分' + score);
+            uni.setStorage({
+              key: "errorList",
+              data: [] });
 
+            uni.setStorageSync('errorList', errorQestionList);
             uni.redirectTo({
-              url: '../../pages/examExport/examExport?score=' + score + '&num=' + that.dataList.length + '&errorid=' + JSON.stringify(errorListid) });
+              url: '../../pages/examExport/examExport?score=' + score + '&num=' + that.dataList.length });
 
           }
         } });

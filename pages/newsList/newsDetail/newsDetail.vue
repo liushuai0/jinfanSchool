@@ -1,13 +1,16 @@
 <template>
 	<view class="Container">
-		<view class="title">{{ newsList.title }}</view>
+		<view class="title">{{ title }}</view>
 		<view class="findnum">20015阅读</view>
 		<view class="content"><rich-text :nodes="content" style="font-size: 14px;"></rich-text></view>
 		<view class="caozuo">
-			<image :src="newsList.hasshoucang?'../../../static/image/shoucang0.png':'../../../static/image/shoucang3.png'" @tap="chooseSC" mode=""></image>
-			<image :src="newsList.hasdianzan?'../../../static/image/dianzan0.png':'../../../static/image/dianzan.png'" @tap="chooseDZ" mode=""></image>
-			<image src="../../../static/image/zhuanfa.png" mode="" @tap="shareNews"></image>
-			<text class="date">2019-{{newsList.date}} {{newsList.time}}</text>
+			<image :src="newsList.hasshoucang ? '../../../static/image/shoucang0.png' : '../../../static/image/shoucang3.png'" @tap="chooseSC" mode=""></image>
+			<image :src="newsList.hasdianzan ? '../../../static/image/dianzan0.png' : '../../../static/image/dianzan.png'" @tap="chooseDZ" mode=""></image>
+			
+			<!--  -->
+				<button  class="shareBtn" open-type="share"><image src="../../../static/image/zhuanfa.png" mode="" @tap="shareNews"></image></button>
+			
+			<text class="date">2019-{{ newsList.date }} {{ newsList.time }}</text>
 		</view>
 	</view>
 </template>
@@ -23,13 +26,14 @@ export default {
 				name: '中国吉林网',
 				date: '03-23',
 				time: '14：20',
-				id:5258169,
-				hasshoucang:false,
-				hasdianzan:false,
-				content:' 圣诞快乐分管科室电话分公325司领导放大后即可<image style="width:100rpx;height:140rpx" src="../../../static/image/cardimg.jpeg" mode="widthFix" />广东省双方5735各绝对是法国代,收款家分公司代付款水电费格劳克斯电饭锅是大法官盛世嫡妃kg惊世毒妃地方帝国时代克己奉公SDK房管局水电费空格键是大法官第三方高科技时代峻峰空格深度覆盖是'
+				id: 5258169,
+				hasshoucang: false,
+				hasdianzan: false,
+				content:
+				' 圣诞快乐分管科室电话分公325司领导放大后即可<image style="width:100rpx;height:140rpx" src="../../../static/image/cardimg.jpeg" mode="widthFix" />广东省双方5735各绝对是法国代,收款家分公司代付款水电费格劳克斯电饭锅是大法官盛世嫡妃kg惊世毒妃地方帝国时代克己奉公SDK房管局水电费空格键是大法官第三方高科技时代峻峰空格深度覆盖是'
 			},
 			content: [],
-			
+			title:''
 		};
 	},
 
@@ -41,62 +45,55 @@ export default {
 		// } catch (error) {
 		// 	this.banner = JSON.parse(event.query);
 		// }
-		if(options.id){
+		if (options.id) {
 			this.getDetail(options.id);
 		}
 	},
 	methods: {
-		getDetail(id){
-		uni.request({
-			url: 'https://unidemo.dcloud.net.cn/api/news/36kr/' + id,
-			success: (result) => {
-				console.log(result);
-				
-				var content;
-				if (result.statusCode == 200) {
-					this.newsList = result.data.content
+		getDetail(id) {
+			uni.request({
+				url: 'https://unidemo.dcloud.net.cn/api/news/36kr/' + id,
+				success: result => {
+					console.log(result);
+					let content = result.data.content;
+					
+					const nodes = htmlParser(content);
+					console.log(nodes);
+					this.content = nodes;
+					this.title=result.data.title
 				}
-				const nodes = htmlParser(content);
-				console.log(nodes);
-				this.content = nodes
-			}
-		});
+			});
 		},
-		chooseSC(e){
-			this.newsList.hasshoucang=!this.newsList.hasshoucang
-			if(this.newsList.hasshoucang==true){
-				this.showtoast("收藏成功")
-			}else{
-				this.showtoast("已取消收藏")
+		chooseSC(e) {
+			this.newsList.hasshoucang = !this.newsList.hasshoucang;
+			if (this.newsList.hasshoucang == true) {
+				this.showtoast('收藏成功');
+			} else {
+				this.showtoast('已取消收藏');
 			}
-
 		},
-		chooseDZ(e){
-			this.newsList.hasdianzan=!this.newsList.hasdianzan
-			if(this.newsList.hasdianzan==true){
-				this.showtoast("点赞成功")
-			}else{
-				this.showtoast("已取消点赞")
+		chooseDZ(e) {
+			this.newsList.hasdianzan = !this.newsList.hasdianzan;
+			if (this.newsList.hasdianzan == true) {
+				this.showtoast('点赞成功');
+			} else {
+				this.showtoast('已取消点赞');
 			}
-
 		},
-		showtoast(titie){
+		showtoast(titie) {
 			uni.showToast({
-				title:titie
-			})
+				title: titie
+			});
 			setTimeout(function() {
-				uni.hideLoading()
+				uni.hideLoading();
 			}, 1000);
 		},
-		shareNews(e){
-			var that=this
-			that.onShareAppMessage()
+		shareNews(e) {
+			var that = this;
 		},
 		onShareAppMessage(res) {
-		
-		  }
-		
-		
+			console.log("分享");
+		}
 	}
 };
 </script>
@@ -124,20 +121,38 @@ export default {
 	margin-bottom: 100rpx;
 	color: #999999;
 }
-.caozuo{
+.caozuo {
 	display: flex;
 	align-items: center;
 	position: relative;
 	margin-bottom: 60rpx;
 }
-.caozuo image{
+.caozuo image {
 	width: 39rpx;
 	height: 39rpx;
 	margin-left: 35rpx;
 }
-.date{
+.date {
 	position: absolute;
 	right: 30rpx;
 	color: #999999;
 }
+.shareBtn{
+	border: none;
+	outline: none;
+	background-color: #fff;
+	margin-left: 2rpx;
+	width: 70rpx;
+	padding: 0;
+	display: flex;
+	align-items: center;
+
+}
+.shareBtn image{
+	width: 39rpx;
+	height: 39rpx;
+}
+    .shareBtn::after{
+        border: 0;
+    }
 </style>

@@ -21,19 +21,20 @@
 				index: 0,
 				QuestionList: [],
 				showjiexi:true,
-				errorListid:[]
+				errorList:[]
 			}
 		},
 		onLoad(options) {
 			console.log("---------错题页面----------")
 			console.log(options);
-			if(options.errorListid){
-				this.errorListid=JSON.parse(options.errorListid)
-			}
-			if(options.errorId){
-				this.errorListid=JSON.parse(options.errorId)
-			}
-			
+			// if(options.errorListid){     
+			// 	this.errorListid=JSON.parse(options.errorListid)
+			// }
+			// if(options.errorId){		//从答题报告接收过来的
+			// 	this.errorList=JSON.parse(options.errorId)
+			// }
+			this.errorList=uni.getStorageSync('errorList')
+			console.log(this);
 			_this = this;
 			_this.getTestPaper();
 		},
@@ -69,7 +70,7 @@
 			getTestPaper() {
 				// let data = require('../../static/data.json')  ;
 
-				_this.QuestionList = this.errorListid;
+				_this.QuestionList = this.errorList;
 				if (_this.QuestionList.length > 0) {
 					let title = '1/' + _this.QuestionList.length
 					if (_this.QuestionList[0].questionType == 0)

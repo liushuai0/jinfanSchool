@@ -137,6 +137,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 var _htmlParser = _interopRequireDefault(__webpack_require__(/*! @/common/html-parser */ 29));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
@@ -151,9 +154,10 @@ var _htmlParser = _interopRequireDefault(__webpack_require__(/*! @/common/html-p
 //
 //
 //
-var _default = { data: function data() {return { newsList: { img: '../../../static/image/cardimg.jpeg', title: '启动青年企业家爱上对方阿萨德阿瑟的', name: '中国吉林网', date: '03-23', time: '14：20', id: 5258169, hasshoucang: false, hasdianzan: false, content: ' 圣诞快乐分管科室电话分公325司领导放大后即可<image style="width:100rpx;height:140rpx" src="../../../static/image/cardimg.jpeg" mode="widthFix" />广东省双方5735各绝对是法国代,收款家分公司代付款水电费格劳克斯电饭锅是大法官盛世嫡妃kg惊世毒妃地方帝国时代克己奉公SDK房管局水电费空格键是大法官第三方高科技时代峻峰空格深度覆盖是' },
-      content: [] };
-
+//
+//
+//
+var _default = { data: function data() {return { newsList: { img: '../../../static/image/cardimg.jpeg', title: '启动青年企业家爱上对方阿萨德阿瑟的', name: '中国吉林网', date: '03-23', time: '14：20', id: 5258169, hasshoucang: false, hasdianzan: false, content: ' 圣诞快乐分管科室电话分公325司领导放大后即可<image style="width:100rpx;height:140rpx" src="../../../static/image/cardimg.jpeg" mode="widthFix" />广东省双方5735各绝对是法国代,收款家分公司代付款水电费格劳克斯电饭锅是大法官盛世嫡妃kg惊世毒妃地方帝国时代克己奉公SDK房管局水电费空格键是大法官第三方高科技时代峻峰空格深度覆盖是' }, content: [], title: '' };
 
   },
 
@@ -175,34 +179,30 @@ var _default = { data: function data() {return { newsList: { img: '../../../stat
         url: 'https://unidemo.dcloud.net.cn/api/news/36kr/' + id,
         success: function success(result) {
           console.log(result);
+          var content = result.data.content;
 
-          var content;
-          if (result.statusCode == 200) {
-            _this.newsList = result.data.content;
-          }
           var nodes = (0, _htmlParser.default)(content);
           console.log(nodes);
           _this.content = nodes;
+          _this.title = result.data.title;
         } });
 
     },
     chooseSC: function chooseSC(e) {
       this.newsList.hasshoucang = !this.newsList.hasshoucang;
       if (this.newsList.hasshoucang == true) {
-        this.showtoast("收藏成功");
+        this.showtoast('收藏成功');
       } else {
-        this.showtoast("已取消收藏");
+        this.showtoast('已取消收藏');
       }
-
     },
     chooseDZ: function chooseDZ(e) {
       this.newsList.hasdianzan = !this.newsList.hasdianzan;
       if (this.newsList.hasdianzan == true) {
-        this.showtoast("点赞成功");
+        this.showtoast('点赞成功');
       } else {
-        this.showtoast("已取消点赞");
+        this.showtoast('已取消点赞');
       }
-
     },
     showtoast: function showtoast(titie) {
       uni.showToast({
@@ -214,10 +214,9 @@ var _default = { data: function data() {return { newsList: { img: '../../../stat
     },
     shareNews: function shareNews(e) {
       var that = this;
-      that.onShareAppMessage();
     },
     onShareAppMessage: function onShareAppMessage(res) {
-
+      console.log("分享");
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

@@ -46,7 +46,7 @@
 						<button v-if="currentIndex != 0" size="mini" @tap="lastQuestion">{{ lastText }}</button>
 						<button @tap="switchIndexBox" class="tihao">{{ indexText }}{{ showIndexBox ? '▽' : '△' }}</button>
 						<button v-show="currentIndex < dataList.length - 1" size="mini" @tap="nextQuestion">{{ nextText }}</button>
-						<button v-if="currentIndex == dataList.length - 1" size="mini" @tap="jiaojuan">
+						<button v-if="currentIndex == dataList.length - 1&&!showjiexi" size="mini" @tap="jiaojuan">
 							立即交卷</button>
 						<button v-if="currentIndex == dataList.length - 1&&showjiexi" size="mini" @tap="jiaojuan">返回首页</button>
 					</view>
@@ -151,21 +151,23 @@ export default {
 					if (r.confirm) {
 						//计算答题分数
 						var score = 0;
-						var errorListid=[]
+						var errorQestionList=[]
 						for (var i = 0; i < that.dataList.length; i++) {
 							if (that.dataList[i].fldAnswer == that.dataList[i].fldTrueAnswer) {
 								score = score + 1;
 							}else{
-								errorListid.push({
-									"errorId":that.dataList[i].questionID
-								})
+								errorQestionList.push(that.dataList[i])
 							}
 						}
-						console.log(errorListid);
+						console.log(errorQestionList);
 						console.log('考试得分' + score);
-						
+						uni.setStorage({
+							key:"errorList",
+							data:[]
+						})
+						uni.setStorageSync('errorList',errorQestionList)
 						uni.redirectTo({
-							url: '../../pages/examExport/examExport?score=' + score + '&num=' + (that.dataList.length)+'&errorid='+JSON.stringify(errorListid) 
+							url: '../../pages/examExport/examExport?score=' + score + '&num=' + (that.dataList.length)
 						});
 					}
 				}

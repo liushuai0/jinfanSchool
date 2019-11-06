@@ -151,8 +151,8 @@ var _default =
   data: function data() {
     return {
       score: 0,
-      num: 0,
-      errorListid: [] };
+      num: 0 };
+
 
   },
   onLoad: function onLoad(options) {
@@ -160,7 +160,7 @@ var _default =
     if (options.score && options.num) {
       this.score = options.score;
       this.num = options.num;
-      this.errorListid = JSON.parse(options.errorid);
+
     }
   },
   methods: {
@@ -181,7 +181,7 @@ var _default =
     },
     toError: function toError() {
       uni.redirectTo({
-        url: "../examError/examError?errorId=" + JSON.stringify(this.errorListid) });
+        url: "../examError/examError" });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

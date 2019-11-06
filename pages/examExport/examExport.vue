@@ -28,7 +28,7 @@
 			return {
 				score:0,
 				num:0,
-				errorListid:[]
+				
 			}
 		},
 		onLoad(options) {
@@ -36,7 +36,7 @@
 			if(options.score&&options.num){
 				this.score=options.score
 				this.num=options.num
-				this.errorListid=JSON.parse(options.errorid)
+				
 			}
 		},
 		methods: {
@@ -57,7 +57,7 @@
 			},
 			toError(){
 				uni.redirectTo({
-					url:"../examError/examError?errorId="+ JSON.stringify(this.errorListid)
+					url:"../examError/examError"
 				})
 			}
 		}
