@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/Home/Home",
+    "pages/newsList/newsDetail/newsDetail",
+    "pages/videoClass/videoClass",
+    "pages/examSignup/examSignup",
+    "pages/examError/examError",
+    "pages/examExport/examExport",
+    "pages/examinePre/examinePre",
+    "pages/My/My",
+    "pages/examine/examine",
+    "pages/Home/qianDao/qianDao",
+    "pages/videoClass/videoDetail/videoDetail",
+    "pages/videoClass/videoOrder/videoOrder",
+    "pages/My/myClass/myClass",
+    "pages/My/myCollection/myCollection",
+    "pages/My/myCard/myCard",
+    "pages/examinePre/examineCard/examineCard",
+    "pages/newsList/newsList",
+    "pages/Home/qianDao/scan-frame/scan-frame",
+    "pages/Home/qianDao/rule/rule",
+    "pages/Home/qianDao/sign/sign",
+    "pages/examError/examErrCollection/examErrCollection",
+    "pages/Home/qianDao/ImportCalendar"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#007AFF",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/Home/Home",
+        "text": "首页",
+        "iconPath": "./static/image/home0.png",
+        "selectedIconPath": "./static/image/home1.png"
+      },
+      {
+        "pagePath": "pages/My/My",
+        "text": "我的",
+        "iconPath": "./static/image/me0.png",
+        "selectedIconPath": "./static/image/me1.png"
+      }
+    ]
+  },
+  "usingComponents": {
+	  
+  },
+  		"permission": {
+  			"scope.userLocation": {
+  				"desc": "你的位置信息将用于小程序位置接口的效果展示"
+  			}
+  		},
+  "sitemapLocation": "sitemap8.json"
+}

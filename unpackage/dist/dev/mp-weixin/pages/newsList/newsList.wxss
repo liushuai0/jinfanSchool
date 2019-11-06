@@ -1,0 +1,86 @@
+
+.Container {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	padding: 20rpx;
+}
+.card {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	padding: 30rpx;
+	position: relative;
+	border-top: 18rpx solid #e1e1e1;
+	margin-left: -20rpx;
+	margin-right: -20rpx;
+	padding-left: 30rpx;
+	padding-right: 30rpx;
+}
+.card_left {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	width: 466rpx;
+}
+.card_title {
+	font-size: 30rpx;
+	font-weight: 600;
+}
+.card_right {
+}
+.card_img {
+	width: 260rpx;
+	height: 180rpx;
+	border-radius: 14rpx;
+	margin-left: 30rpx;
+}
+.card-footer {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	font-size: 26rpx;
+	color: gray;
+	position: absolute;
+	bottom: 30rpx;
+	width: 370rpx;
+}
+.card_name {
+	font-size: 30rpx;
+}
+.card_time {
+	position: absolute;
+	right: 0rpx;
+}
+.card_time text {
+	margin-right: 20rpx;
+}
+

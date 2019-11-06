@@ -1,0 +1,164 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/Home/Home",
+			"style": {
+				"navigationBarTitleText": "金帆技校"
+			}
+		},
+		{
+			"path": "pages/newsList/newsDetail/newsDetail",
+			"style": {
+				"navigationBarTitleText": "新闻详情"
+			}
+		},
+
+		{
+			"path": "pages/videoClass/videoClass",
+			"style": {
+				"navigationBarTitleText": "视频课程"
+			}
+		},
+
+		{
+			"path": "pages/examSignup/examSignup",
+			"style": {
+				"navigationBarTitleText": "报名考试"
+			}
+		},
+
+		{
+			"path": "pages/examError/examError",
+			"style": {
+				"navigationBarTitleText": "我的错题"
+			}
+		},
+
+		{
+			"path": "pages/examExport/examExport",
+			"style": {
+				"navigationBarTitleText": "答题报告"
+			}
+		},
+		{
+			"path": "pages/examinePre/examinePre",
+			"style": {
+				"navigationBarTitleText": "模拟考试"
+			}
+		},
+
+		{
+			"path": "pages/My/My",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		}
+
+
+		, {
+			"path": "pages/examine/examine",
+			"style": {
+				"navigationBarTitleText": "答题"
+			}
+		}, {
+			"path": "pages/Home/qianDao/qianDao",
+			"style": {
+				"navigationBarTitleText": "签到"
+			}
+		}
+
+		, {
+			"path": "pages/videoClass/videoDetail/videoDetail",
+			"style": {
+				"navigationBarTitleText": "课程详情"
+			}
+		}, {
+			"path": "pages/videoClass/videoOrder/videoOrder",
+			"style": {
+				"navigationBarTitleText": "提交订单"
+			}
+		}, {
+			"path": "pages/My/myClass/myClass",
+			"style": {
+				"navigationBarTitleText": "我的课程"
+			}
+		}, {
+			"path": "pages/My/myCollection/myCollection",
+			"style": {
+				"navigationBarTitleText": "我的收藏"
+			}
+		}, {
+			"path": "pages/My/myCard/myCard",
+			"style": {
+				"navigationBarTitleText": "我的卡券"
+			}
+		}, {
+			"path": "pages/examinePre/examineCard/examineCard",
+			"style": {
+				"navigationBarTitleText": "提交订单"
+			}
+		}, {
+			"path": "pages/newsList/newsList",
+			"style": {
+				"navigationBarTitleText": "新闻资讯"
+			}
+		},
+		{
+			"path": "pages/Home/qianDao/scan-frame/scan-frame",
+			"style": {
+				"navigationBarTitleText": "拍照"
+			}
+		},
+		{
+			"path": "pages/Home/qianDao/rule/rule",
+			"style": {
+				"navigationBarTitleText": "规则"
+			}
+		},
+		{
+			"path": "pages/Home/qianDao/sign/sign",
+			"style": {
+				"navigationBarTitleText": "标记"
+			}
+		}
+
+	    ,{
+            "path" : "pages/examError/examErrCollection/examErrCollection",
+            "style" : {
+				"navigationBarTitleText": "错题收藏"
+			}
+        },
+		{
+		    "path" : "pages/Home/qianDao/ImportCalendar",
+		    "style" : {
+				"navigationBarTitleText": "打卡日历"
+			}
+		}
+		
+    ],
+	"tabBar": {
+		"color": "#000000",
+		"selectedColor": "#007AFF",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"list": [{
+				"pagePath": "pages/Home/Home",
+				"text": "首页",
+				"iconPath": "./static/image/home0.png",
+				"selectedIconPath": "./static/image/home1.png"
+			},
+			{
+				"pagePath": "pages/My/My",
+				"text": "我的",
+				"iconPath": "./static/image/me0.png",
+				"selectedIconPath": "./static/image/me1.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

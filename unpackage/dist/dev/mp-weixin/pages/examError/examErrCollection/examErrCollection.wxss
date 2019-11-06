@@ -1,0 +1,45 @@
+
+page{
+		background-color: #F5F5F5;
+}
+.Container{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	padding: 20rpx;
+}
+.card{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	background-color: white;
+	padding:30rpx;
+	margin-bottom: 30rpx;
+	border-radius: 10rpx;
+}
+.card_title{
+	color: #007AFF;
+	font-size: 28rpx;
+}
+.card_content{
+	font-size: 30rpx;
+	
+	line-height: 40rpx;
+}
+.card_footer{
+	color: #999999;
+	font-size: 28rpx;
+}
+
