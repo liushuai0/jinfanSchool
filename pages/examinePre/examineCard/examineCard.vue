@@ -20,7 +20,6 @@
 			<text>点卡总价</text>
 			<view class="nav_right">
 				￥300.00
-		
 			</view>
 		</view>
 
@@ -33,6 +32,7 @@
 </template>
 
 <script>
+	import http from "../../../common/getList.js"
 	export default {
 		data() {
 			return {
@@ -41,9 +41,22 @@
 		},
 		methods: {
 			payMoney(e){
-				uni.redirectTo({
-					url:"../examinePre?hascard="+"true"
-				})
+				let url="demo"
+				let data={
+					name:12,
+					password:321651
+				}
+				http.request(url,data).then(
+					res=>{
+						console.log(res);
+					},
+					error=>{
+						
+					}
+				)
+				// uni.redirectTo({
+				// 	url:"../examinePre?hascard="+"true"
+				// })
 			}
 		}
 	}

@@ -41,7 +41,7 @@
 
 				<view class="exam-button-row">
 					<view class="control">
-						<!-- 						<button size="mini" @tap="finish" style="margin-right: 20upx;">{{ finishText }}</button> -->
+						<!-- button size="mini" @tap="finish" style="margin-right: 20upx;">{{ finishText }}</button> -->
 						<button v-if="currentIndex === 0" disabled="false" size="mini">{{ lastText }}</button>
 						<button v-if="currentIndex != 0" size="mini" @tap="lastQuestion">{{ lastText }}</button>
 						<button @tap="switchIndexBox" class="tihao">{{ indexText }}{{ showIndexBox ? '▽' : '△' }}</button>

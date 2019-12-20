@@ -7984,8 +7984,9 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var host = 'http://49.232.155.91:8080/Urecruit/';
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // const host = 'http://49.232.155.91:8080/Urecruit/'
 
+var host = 'http://localhost:3000/';
 function request(url) {var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   uni.showLoading({
     title: '加载中' // 数据请求前loading

@@ -1,5 +1,6 @@
-const host = 'http://49.232.155.91:8080/Urecruit/'
+// const host = 'http://49.232.155.91:8080/Urecruit/'
  
+ const host = 'http://localhost:3000/'
 function request (url, data = {}) {
   uni.showLoading({
     title: '加载中' // 数据请求前loading
